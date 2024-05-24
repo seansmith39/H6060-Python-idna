@@ -30,6 +30,7 @@ jobs:
         uses: seansmith39/H6060-Experiment-Resources/.github/actions/python/python-build-upload@Update_experiment_workflows
         with:
           build-command: python -m build
+          build-directory: dist
 
       - name: Run Tests With Coverage
         shell: bash
