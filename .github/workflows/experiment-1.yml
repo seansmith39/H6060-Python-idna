@@ -44,3 +44,21 @@ jobs:
           name: coverage-report
           path: coverage.xml
           if-no-files-found: error
+
+  python-scanning:
+    name: Run SCA and SAST Python Scanning Workflow
+    uses: seansmith39/H6060-Experiment-Workflows/.github/workflows/experiment-1-python.yml@Update_experiment_workflows
+    needs: build-application
+    secrets: inherit
+    with:
+      project-name: H6060-Python-idna
+      coverage-filename: coverage.xml
+      sast-sonarqube-enabled: false
+      sast-semgrep-enabled: false
+      sast-deepsource-enabled: false
+      sast-codeql-enabled: false
+      sast-snyk-code-enabled: false
+      sca-eclipse-steady-enabled: false
+      sca-snyk-enabled: false
+      sca-owasp-dependency-check-enabled: false
+      sca-grype-enabled: false
