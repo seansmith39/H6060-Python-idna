@@ -38,7 +38,7 @@ jobs:
           pytest --cov=.
           coverage xml
 
-      - name: Upload Coverage Report
+      - name: Upload Coverage XML Report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
